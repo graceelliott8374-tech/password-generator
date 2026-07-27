@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+    <link rel="stylesheet" type="text/css" href="assets/style/style.css">
+</head>
+<body>
+
+<div class="generatorContainer">
+
+<div id="generatorSquare">
+<h1>Password Generator</h1>
+
+<form action="#">
+<div id="output">
+    <p id="passWord"></p>
+    <label for="togglePassword" id="toggleLabel">
+        <input type="checkbox" id="togglePassword"> Show Password
+    </label>
+    <div id="strengthWrapper">
+        <div id="strengthBar"></div>
+        <p id="strengthText"></p>
+    </div>
+    <button type="button" id="copyBtn">📋 Copy to Clipboard</button>
+</div>
+
+
+<label for="passwordLength">Password length:</label> <input type="number" id="length"><br>
+
+<label for="upperCase">Include uppercase letters:</label> <input type="checkbox" id="upperCase" value="uppercase"><br>
+
+<label for="lowerCase">Include lowercase letters:</label> <input type="checkbox" id="lowerCase" value="lowercase"><br>
+
+<label for="number">Include numbers:</label><input type="checkbox" id="number" value="number"><br>
+
+<label for="symbols">Include symbols:</label><input type="checkbox" id="symbol" value="symbol"><br>
+
+<button type="button" id="generate">🔄 Regenerate Password</button>
+<p>Click 🔄 again to regenerate a new password with the same settings.</p>
+</div>
+</form>
+
+
+</div>
+
+
+
+    <script src="assets/script/script.js"></script>
+</body>
+</html>
