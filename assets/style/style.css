@@ -1,167 +1,133 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: black;
-    font-family: cursive;
-
+  width: 380px;
+  margin: 0;
+  background-color: black;
+  font-family: cursive;
 }
 #passWord {
-    margin-left: 50px;
-    height: 50px;
-    width: 75%;
-    text-align: center;
-    font-size: 18px;
-    border: 2px dashed  black;
-    color: rgb(73, 70, 70);
+  margin-left: 50px;
+  height: 50px;
+  width: 75%;
+  text-align: center;
+  font-size: 18px;
+  border: 2px dashed black;
+  color: rgb(73, 70, 70);
 }
 
-.generatorContainer{
-    max-width: 600px;
-    width: 90%;
-    margin: auto;
-    padding: 1rem;
+.generatorContainer {
+  max-width: 600px;
+  width: 90%;
+  margin: auto;
+  padding: 1rem;
 }
 #generatorSquare {
-    background-color: rgb(224, 9, 123);
-    height: 75%;
-    margin: auto;
-    font-size: 1.5em;
-    border-style: inset;
-    border-radius: 10px;
+  background-color: #ad1457;
+  color: #fff8fb;
+  height: 75%;
+  margin: auto;
+  font-size: 1.5em;
+  border-style: inset;
+  border-radius: 10px;
 }
-#generatorSquare h1{
-    text-align: center;
-    text-shadow: -2px 2px rgb(164, 156, 156);
+#generatorSquare h1 {
+  text-align: center;
 }
-input { 
-    float: right;
-    font-size: 18px;
-    margin-left: 15px;
-    margin-right: 15px;
-    caret-color: red;
-    
+input {
+  float: right;
+  font-size: 18px;
+  margin-left: 15px;
+  margin-right: 15px;
+  caret-color: red;
 }
 label {
-    margin-left: 15px;
-    font-weight: 900;
-    text-shadow: 2px 2px 2px rgb(164, 156, 156);
+  margin-left: 15px;
+  font-weight: 900;
 }
 #generate {
-    margin-left: 35%;
-    margin-bottom: 10px;
-    font-size: 20px;
-    border-radius: 6px;
-    background-color: black;
-    color: rgb(224, 9, 123);
-    box-shadow: 3px 3px rgb(164, 156, 156);
+  margin-left: 35%;
+  margin-bottom: 10px;
+  font-size: 20px;
+  border-radius: 6px;
+  background-color: black;
+  color: rgb(224, 9, 123);
+  box-shadow: 3px 3px rgb(164, 156, 156);
 }
 #generate:active {
-    transform: translateY(4px);
-    transition-duration: 0.5s;
+  transform: translateY(4px);
+  transition-duration: 0.5s;
 }
 #copyBtn {
-    margin: 10px auto;
-    display: block;
-    font-size: 18px;
-    border-radius: 6px;
-    background-color: black;
-    color: rgb(224, 9, 123);
-    box-shadow: 3px 3px rgb(164, 156, 156);
-    padding: 8px 16px;
-    cursor: pointer;
-    border: none;
+  margin: 10px auto;
+  display: block;
+  font-size: 18px;
+  border-radius: 6px;
+  background-color: black;
+  color: rgb(224, 9, 123);
+  box-shadow: 3px 3px rgb(164, 156, 156);
+  padding: 8px 16px;
+  cursor: pointer;
+  border: none;
 }
 
 #copyBtn:active {
-    transform: translateY(3px);
-    transition-duration: 0.3s;
+  transform: translateY(3px);
+  transition-duration: 0.3s;
 }
 
 #copyBtn:hover {
-    background-color: rgb(32, 32, 32);
+  background-color: rgb(32, 32, 32);
 }
 p {
-    text-align: center;
-    padding-bottom: 12px;
+  text-align: center;
+  padding-bottom: 12px;
 }
 
-/* Mobile responsiveness for small screens */
-@media (max-width: 600px) {
-    #generatorSquare {
-        font-size: 1.2em;
-        padding: 1rem;
-    }
-
-    #passWord {
-        font-size: 16px;
-        width: 100%;
-        margin-left: 0;
-    }
-
-    input {
-        width: 80%;
-        float: none;
-        display: block;
-        margin: 10px auto;
-        text-align: center;
-    }
-
-    label {
-        display: block;
-        text-align: center;
-        margin: 5px 0;
-    }
-
-    #generate {
-        margin: 20px auto;
-        display: block;
-        width: fit-content;
-        padding: 10px 20px;
-    }
-}
-
-engthWrapper {
-    width: 80%;
-    margin: 10px auto;
-    text-align: center;
+#strengthWrapper {
+  width: 80%;
+  margin: 10px auto;
+  text-align: center;
 }
 
 #strengthBar {
-    height: 10px;
-    border-radius: 5px;
-    background-color: lightgray;
-    transition: width 0.3s ease, background-color 0.3s ease;
-    width: 0%;
+  height: 10px;
+  border-radius: 5px;
+  background-color: lightgray;
+  transition:
+    width 0.3s ease,
+    background-color 0.3s ease;
+  width: 0%;
 }
 
 #strengthText {
-    font-weight: bold;
-    color: white;
-    margin-top: 5px;
+  font-weight: bold;
+  color: white;
+  margin-top: 5px;
 }
 
 /* Spin animation keyframes */
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
 
-    100% {
-        transform: rotate(360deg);
-    }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Class to trigger spin */
 .spin {
-    animation: spin 0.5s linear;
+  animation: spin 0.5s linear;
 }
 
 #toggleLabel {
-    display: block;
-    text-align: center;
-    color: white;
-    margin: 10px 0;
-    font-weight: bold;
+  display: block;
+  text-align: center;
+  color: white;
+  margin: 10px 0;
+  font-weight: bold;
 }

@@ -1,35 +1,32 @@
-const len = document.getElementById("length"); //input length
-//checkboxes
+const len = document.getElementById("length");
+
 const upper = document.getElementById("upperCase");
 const lower = document.getElementById("lowerCase");
 const num = document.getElementById("number");
 const sym = document.getElementById("symbol");
-//output
+
 const password = document.getElementById("passWord");
 const strengthBar = document.getElementById("strengthBar");
 const strengthText = document.getElementById("strengthText");
 const togglePassword = document.getElementById("togglePassword");
-//button
+
 const btn = document.getElementById("generate");
-//what to get
+
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lowerLetters = "abcdefghijklmnopqrstuvwxyz";
 const symbols = "!@#$%^&*()-_=+[{]}:;'<>.,?";
 const numbers = "0123456789";
 
-//generate fx
 function generatePassword() {
   const myLength = parseInt(len.value);
   let choices = "";
   let finalWord = "";
 
-  //Validate length
   if (isNaN(myLength) || myLength < 8 || myLength > 124) {
     password.textContent = "X Please enter a length between 8 and 124.";
     return;
   }
 
-  //Build character set
   if (upper.checked) choices += alphabet;
   if (lower.checked) choices += lowerLetters;
   if (num.checked) choices += numbers;
@@ -46,6 +43,7 @@ function generatePassword() {
   }
 
   password.textContent = finalWord;
+  btn.textContent = "Regenerate Password";
   evaluateStrength(finalWord);
   togglePassword.checked = true;
   password.style.color = "white";
@@ -55,16 +53,13 @@ function generatePassword() {
 
 btn.addEventListener("click", generatePassword);
 btn.addEventListener("click", () => {
-  // Add spin class to button
   btn.classList.add("spin");
 
-  // Remove it after animation ends (so it can repeat next click)
   setTimeout(() => {
     btn.classList.remove("spin");
-  }, 500); // Matches animation duration
+  }, 500);
 });
 
-//copy to clipboard button
 const copyBtn = document.getElementById("copyBtn");
 
 copyBtn.addEventListener("click", () => {
@@ -95,7 +90,6 @@ function evaluateStrength(password) {
   if (/[0-9]/.test(password)) score++;
   if (/[^A-Za-z0-9]/.test(password)) score++;
 
-  // Cap the score
   if (score > 4) score = 4;
 
   const strengthLevels = [
@@ -115,10 +109,8 @@ function evaluateStrength(password) {
 
 togglePassword.addEventListener("change", () => {
   if (togglePassword.checked) {
-    // Show password
     password.style.color = "white";
   } else {
-    // Hide password
     password.style.color = "transparent";
     password.style.textShadow = "0 0 8px rgba(255,255,255,0.5)";
   }
