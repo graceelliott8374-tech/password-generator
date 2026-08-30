@@ -1,4 +1,4 @@
-const len = document.getElementById("length");//input length
+const len = document.getElementById("length"); //input length
 //checkboxes
 const upper = document.getElementById("upperCase");
 const lower = document.getElementById("lowerCase");
@@ -47,14 +47,13 @@ function generatePassword() {
 
   password.textContent = finalWord;
   evaluateStrength(finalWord);
-  togglePassword.checked = false;
-  password.style.color = "transparent";
-  password.style.textShadow = "0 0 8px rgba(255,255,255,0.5)"; 
+  togglePassword.checked = true;
+  password.style.color = "white";
+  password.style.textShadow = "none";
   return finalWord;
 }
 
-
-btn.addEventListener('click', generatePassword);
+btn.addEventListener("click", generatePassword);
 btn.addEventListener("click", () => {
   // Add spin class to button
   btn.classList.add("spin");
@@ -76,14 +75,15 @@ copyBtn.addEventListener("click", () => {
     return;
   }
 
-  navigator.clipboard.writeText(text)
-  .then( () => {
-    alert("✅ Password copied to clipboard!");
-  })
-  .catch(err => {
-    alert("❌ Failed to copy password.");
-    console.error(err);
-  });
+  navigator.clipboard
+    .writeText(text)
+    .then(() => {
+      alert("✅ Password copied to clipboard!");
+    })
+    .catch((err) => {
+      alert("❌ Failed to copy password.");
+      console.error(err);
+    });
 });
 
 function evaluateStrength(password) {
